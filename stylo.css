@@ -90,3 +90,8 @@ body{
     background-color: var(--color-operator);
 }
 
+@media (max-width: 576px) {
+    #parte-superior, #display-ext, #display-in{
+        max-width: 0.5rem;
+    }  
+} 
