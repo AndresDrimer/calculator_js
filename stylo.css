@@ -59,9 +59,7 @@ body{
     background-color: var(--color-display);
     height: 110px;
     color: var(--color-number);
-    overflow: hidden;
-    
-    
+    overflow: hidden; 
       
 }
 .buttons{
@@ -91,7 +89,11 @@ body{
 }
 
 @media (max-width: 576px) {
-    #parte-superior, #display-ext, #display-in {
+    #parte-superior, {
         max-width: 0.3rem;
     }  
+    #display-ext, #display-int{
+        max-width: 4.8em;
+       
+    }
 } 
