@@ -1,0 +1,92 @@
+:root{
+    --color-fondo: #4569B0;
+    --color-operator: #9DCBCF;
+    --color-special-operator: #BC2C76;
+    --color-number:#CFE0D8;
+    --color-display: #606B81;
+    --color-encabezado: #344686;
+    --color-font:#1A253B;
+}
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5em;
+}
+#calculadora-container{
+    margin:auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 5px solid black;
+    padding: 0.9em; 
+    background-color: var(--color-fondo);
+    border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
+    max-width: 25rem;
+}
+#parte-superior{
+    display: flex;
+    flex-direction: row;
+    width: 8em;
+    align-items: center;
+    justify-content:space-around;
+    font-size: 0.6em;
+    color: var(--color-encabezado);
+    margin: -2.5em auto -1em auto;   
+}
+#parte-superior h6{
+    font-size: 0.5em;
+}
+.cuadraditos-superior{
+    border: 1px solid black;
+    width: 20px;
+    background-color: var(--color-encabezado);
+}
+#display-ext, #display-int{
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
+}
+#display-ext{
+    width: 5.2em;
+    background-color: var(--color-encabezado);
+    height: 1.8em;
+    margin-bottom: 0.5em;
+}
+#display-int{
+    width: 370px;
+    background-color: var(--color-display);
+    height: 110px;
+    color: var(--color-number);
+    overflow: hidden;
+    
+    
+      
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row{
+   padding: 0.2em;
+}
+.special-operator, .number, .operator {
+    padding: 0.1px 0.3em;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 6px  6px 30px 30px;
+}
+.special-operator{
+    font-size: 0.7em;
+    background-color: var(--color-special-operator);
+   
+}
+.number{
+    background-color: var(--color-number);
+}
+.operator{
+    background-color: var(--color-operator);
+}
+
