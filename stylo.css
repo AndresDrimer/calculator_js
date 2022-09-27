@@ -38,9 +38,8 @@ html{
     max-width: 700px;
     font-size: 0.6em;
     color: var(--color-encabezado);
-    margin: -2.5em auto -1em auto;   
-    
-    min-width: 300px;
+    margin: -2.5em auto -1em auto;     
+    min-width: 200px;
 }
 
 
@@ -61,7 +60,7 @@ html{
     justify-content: center;  
     align-items: center;
     border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
-    min-width: 400px;
+    min-width: 200px;
 }
 
 #display-ext{
