@@ -34,7 +34,7 @@ html{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-around;
+    justify-content:center;
     max-width: 700px;
     font-size: 0.6em;
     color: var(--color-encabezado);
@@ -60,7 +60,7 @@ html{
     justify-content: center;  
     align-items: center;
     border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
-    min-width: 200px;
+    min-width: 300px;
 }
 
 #display-ext{
@@ -78,10 +78,11 @@ html{
     
 }
 
-.buttons{
+#buttons{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 200px;
 }
 
 .row{
