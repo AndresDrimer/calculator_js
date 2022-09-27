@@ -65,7 +65,6 @@ function checkNumLenght(){
     }
 }
 
-
 function clearLastDigit(){
     expression=expression.slice(0,-1)
     display.innerHTML= expression 
