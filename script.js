@@ -111,7 +111,7 @@ function calculus(){
             result=num1/num2
             result= result.toFixed(3)
             for (i in result){
-                if (result[result.lenght]==0){
+                if (result[result.lenght]=='0'){
                 result.pop()
                 }
             }
