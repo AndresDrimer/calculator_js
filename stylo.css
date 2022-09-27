@@ -84,6 +84,11 @@ html{
     align-items: center;
     min-width: 200px;
 }
+@media (max-width:500px){
+    #buttons{
+        width: 200px;
+    }
+}
 
 .row{
    padding: 0.2em;
