@@ -48,10 +48,9 @@ equal.addEventListener('click', calculus)
 //funciones
 function agregarDigito(digit){
     checkNumLenght()
-    
     expression=expression+digit
     display.innerHTML= expression
-    } 
+} 
 
 function checkNumLenght(){
     if (expression.length>7 && expression.length<=14 ) {
@@ -59,7 +58,7 @@ function checkNumLenght(){
         display.style.height = "110px"
     }
     else if (expression.length>14) {
-         alert("la calculadora CLC 001 permite procesar operaciones de hasta 15 dígitos.")
+         alert("CLC 001 calculator process operations up to 15 digits.")
         }
     else if (expression.length<7) {
         display.style.fontSize = "0.8em"
@@ -101,6 +100,7 @@ function calculus(){
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
             result=num1*num2
+            round3ClearZeros()   
             display.innerHTML= result
             expression = result
 
@@ -108,19 +108,31 @@ function calculus(){
             let nums=expression.split('/')
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
-            result=num1/num2
-            result= result.toFixed(3)
-            for (i in result){
-                if (result[result.lenght]=='0'){
-                result.pop()
-                }
+            
+            if (num2=="0"){
+                alert ("zero division is forbidden")
+                expression=[]
+                display.innerHTML= expression
+                break
             }
+
+            result=num1/num2
+            round3ClearZeros()        
             display.innerHTML= result
             expression = result
         }          
     }
 }
 
+
+function round3ClearZeros(){
+    result= parseFloat(result.toFixed(3))
+            for (i in result){
+                if (result[result.lenght]=='0'){
+                    result.pop()
+                }
+            }
+}
 
 function agregarNuevoDigito(digit){
     checkNumLenght()

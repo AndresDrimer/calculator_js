@@ -92,6 +92,7 @@ html{
 @media (max-width:500px){
     #buttons{
         width: 120px;
+        font-size: 0.6em;
     }
     .rows{
         padding:0.1em;
