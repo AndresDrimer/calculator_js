@@ -48,19 +48,24 @@ equal.addEventListener('click', calculus)
 //funciones
 function agregarDigito(digit){
     checkNumLenght()
+    
     expression=expression+digit
     display.innerHTML= expression
     } 
 
 function checkNumLenght(){
-    if (expression.length>7) {
-        display.style.fontSize = "0.4em"
-        display.style.height = "1.7em"
+    if (expression.length>7 && expression.length<=14 ) {
+        display.style.fontSize = "0.5em"
+        display.style.height = "110px"
+    }
+    else if (expression.length>14) {
+         alert("la calculadora CLC 001 permite procesar operaciones de hasta 15 dígitos.")
         }
-    if (expression.length>15) {
-         alert("la calculadora CLC 001 recibe sólo operaciones de hasta 15 dígitos")
-        }
+    else if (expression.length<7) {
+        display.style.fontSize = "0.8em"
+    }
 }
+
 
 function clearLastDigit(){
     expression=expression.slice(0,-1)
@@ -81,7 +86,8 @@ function calculus(){
             result=num1+num2
             display.innerHTML= result
             expression = result
-
+  
+            /*aqui hay un tema a resolver , a veces no resta*/
         } else if (expression[i] == '-'){
             let nums=expression.split('-')
             num1=parseFloat(nums[0])
@@ -103,8 +109,8 @@ function calculus(){
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
             result=num1/num2
-            display.innerHTML= result
-            expression = result
+            display.innerHTML= result.toFixed(3)
+            expression = result.toFixed(3)
         }          
     }
 }
