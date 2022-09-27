@@ -67,6 +67,7 @@ html{
     background-color: var(--color-encabezado);
     height: 1.8em;
     margin-bottom: 0.5em;
+    padding: 0 15px;
 
 }
 
