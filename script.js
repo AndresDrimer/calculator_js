@@ -44,6 +44,42 @@ deleteOne.addEventListener('click', clearLastDigit)
 deleteAll.addEventListener('click', clearAllDigits)
 equal.addEventListener('click', calculus)
 
+/*keyboard listener*/
+document.onkeyup = e =>{
+    if (e.key == "0" || e.key == "Num0"){
+        agregarDigito(0);
+    }else if (e.key == "1" || e.key == "Num1"){
+        agregarDigito(1);
+    }else if (e.key == "2" || e.key == "Num2"){
+        agregarDigito(2);
+    }else if (e.key == "3" || e.key == "Num3"){
+    agregarDigito(3);
+    }else if (e.key == "4" || e.key == "Num4"){
+    agregarDigito(4);
+    }else if (e.key == "5" || e.key == "Num5"){
+    agregarDigito(5);
+    }else if (e.key == "6" || e.key == "Num6"){
+    agregarDigito(6);
+    }else if (e.key == "7" || e.key == "Num7"){
+    agregarDigito(7);
+    }else if (e.key == "8" || e.key == "Num8"){
+    agregarDigito(8);
+    }else if (e.key == "9" || e.key == "Num9"){
+    agregarDigito(9);
+    }else if (e.key == "+" || e.key == "Num+"){
+    agregarDigito("+");
+    }else if (e.key == "-" || e.key == "Num-"){
+    agregarDigito("-");
+    }else if (e.key == "*" || e.key == "Num*"){
+    agregarDigito("x");
+    }else if (e.key == "/" || e.key == "Num/"){
+    agregarDigito("/");
+    }else if (e.key == "." || e.key == "Num."){
+        agregarDigito(".");
+    }else if (e.key == "Enter" || e.key == "Numenter"){
+        calculus();
+    }    
+}
 
 //funciones
 function agregarDigito(digit){
