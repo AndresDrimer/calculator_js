@@ -91,7 +91,7 @@ html{
 
 @media (max-width:500px){
     #buttons{
-        width: 200px;
+        width: 120px;
     }
     .rows{
         padding:0.1em;
