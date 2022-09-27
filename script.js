@@ -1,3 +1,4 @@
+//variables
 let one =document.getElementById("1")
 let two =document.getElementById("2")
 let three =document.getElementById("3")
@@ -17,12 +18,13 @@ let point =document.getElementById("point")
 let deleteOne = document.getElementById("delete")
 let deleteAll = document.getElementById("deleteAll")
 let display = document.getElementById("display-int")
-
 let expression =[]
 let num1=[]
 let num2 =[]
 let result=parseFloat(0)
 
+
+// listeners
 one.addEventListener('click', function() {agregarDigito(1)})
 two.addEventListener('click', function() {agregarDigito(2)})
 three.addEventListener('click', function() {agregarDigito(3)})
@@ -38,24 +40,27 @@ addition.addEventListener('click', function() {agregarDigito("+")})
 subtraction.addEventListener('click', function() {agregarDigito("-")})
 multiplication.addEventListener('click', function() {agregarDigito("x")})
 division.addEventListener('click', function() {agregarDigito("/")})
+deleteOne.addEventListener('click', clearLastDigit)
+deleteAll.addEventListener('click', clearAllDigits)
+equal.addEventListener('click', calculus)
 
+
+//funciones
 function agregarDigito(digit){
     checkNumLenght()
     expression=expression+digit
-    display.innerHTML= expression 
-}
+    display.innerHTML= expression
+    } 
 
 function checkNumLenght(){
     if (expression.length>7) {
-        display.style.fontSize= "0.5em"
+        display.style.fontSize = "0.4em"
+        display.style.height = "1.7em"
         }
     if (expression.length>15) {
          alert("la calculadora CLC 001 recibe sólo operaciones de hasta 15 dígitos")
         }
 }
-
-deleteOne.addEventListener('click', clearLastDigit)
-deleteAll.addEventListener('click', clearAllDigits)
 
 function clearLastDigit(){
     expression=expression.slice(0,-1)
@@ -67,8 +72,6 @@ function clearAllDigits(){
     display.innerHTML=expression
 }
 
-equal.addEventListener('click', calculus)
-
 function calculus(){
     for (i in expression) {
         if (expression[i] == '+'){
@@ -77,12 +80,15 @@ function calculus(){
             num2=parseFloat(nums[1])
             result=num1+num2
             display.innerHTML= result
+            expression = result
+
         } else if (expression[i] == '-'){
             let nums=expression.split('-')
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
             result=num1-num2
             display.innerHTML= result
+            expression = result
         }
         else if (expression[i] == 'x'){
             let nums=expression.split('x')
@@ -90,12 +96,21 @@ function calculus(){
             num2=parseFloat(nums[1])
             result=num1*num2
             display.innerHTML= result
+            expression = result
+
         } else if (expression[i] == '/'){
             let nums=expression.split('/')
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
             result=num1/num2
             display.innerHTML= result
+            expression = result
         }          
     }
 }
+
+function agregarNuevoDigito(digit){
+    checkNumLenght()
+    expression=expression+digit
+    display.innerHTML= expression
+    } 

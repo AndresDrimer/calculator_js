@@ -12,63 +12,84 @@ body{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 5em;
 }
+html{
+    font-size: 16px;
+    box-sizing: border-box;
+}
 #calculadora-container{
-    margin:auto; 
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items:center;
     border: 5px solid black;
     padding: 0.9em; 
     background-color: var(--color-fondo);
-    border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
-    max-width: 25rem;
+    border-radius: 10% 10% 8% 8% / 5% 5% 94% 94%;
+    max-width: 64vw;
+    min-width: 100px;
 }
+
 #parte-superior{
     display: flex;
     flex-direction: row;
-    width: 8em;
     align-items: center;
-    justify-content:space-around;
+    justify-content:center;
+    width: 30vw;
     font-size: 0.6em;
     color: var(--color-encabezado);
     margin: -2.5em auto -1em auto;   
+    max-width: 40vw;
 }
+@media (max-width: 500px) {
+    #parte-superior{
+    font-size: 0.5em;
+    }
+}
+
 #parte-superior h6{
     font-size: 0.5em;
 }
+
 .cuadraditos-superior{
     border: 1px solid black;
     width: 20px;
     background-color: var(--color-encabezado);
+    
 }
+
 #display-ext, #display-int{
     display: flex;
     justify-content: center;  
     align-items: center;
     border-radius: 10% 10% 8% 8% / 5% 5% 94% 94% ;
+    width: 50vw;
 }
+
 #display-ext{
-    width: 5.2em;
     background-color: var(--color-encabezado);
     height: 1.8em;
     margin-bottom: 0.5em;
 }
+
 #display-int{
-    width: 370px;
     background-color: var(--color-display);
     height: 110px;
     color: var(--color-number);
-    overflow: hidden; 
-      
+    overflow: hidden;    
 }
+
 .buttons{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .row{
    padding: 0.2em;
+}
+table .buttons{
+    
 }
 .special-operator, .number, .operator {
     padding: 0.1px 0.3em;
@@ -76,20 +97,22 @@ body{
     text-align: center;
     border-radius: 6px  6px 30px 30px;
 }
+
 .special-operator{
     font-size: 0.7em;
-    background-color: var(--color-special-operator);
-   
+    background-color: var(--color-special-operator);  
 }
+
 .number{
     background-color: var(--color-number);
 }
+
 .operator{
     background-color: var(--color-operator);
 }
 
-@media (max-width: 576px) {
-    #parte-superior, {
+@media (max-width: 740px) {
+    #parte-superior {
         max-width: 0.3rem;
     }  
     #display-ext, #display-int{
