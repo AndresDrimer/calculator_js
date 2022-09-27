@@ -109,11 +109,18 @@ function calculus(){
             num1=parseFloat(nums[0])
             num2=parseFloat(nums[1])
             result=num1/num2
-            display.innerHTML= result.toFixed(3)
-            expression = result.toFixed(3)
+            result= result.toFixed(3)
+            for (i in result){
+                if (result[result.lenght]==0){
+                result.pop()
+                }
+            }
+            display.innerHTML= result
+            expression = result
         }          
     }
 }
+
 
 function agregarNuevoDigito(digit){
     checkNumLenght()
