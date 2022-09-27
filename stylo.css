@@ -27,7 +27,7 @@ html{
     background-color: var(--color-fondo);
     border-radius: 10% 10% 8% 8% / 5% 5% 94% 94%;
     max-width: 450px;
-    min-width: 200px;
+    min-width: 170px;
 }
 
 #parte-superior{
