@@ -131,10 +131,10 @@ function calculus(){
             }
             num2=parseFloat(nums[1])
             result=num1+num2
+            round3ClearZeros()  
             display.innerHTML= result
             expression = result
-  
-            /*aqui hay un tema a resolver , a veces no resta*/
+
         } else if (expression[i] == '-'){
             let nums=expression.split('-')
             num1=parseFloat(nums[0])
@@ -143,10 +143,11 @@ function calculus(){
             }
             num2=parseFloat(nums[1])
             result=num1-num2
+            round3ClearZeros()  
             display.innerHTML= result
             expression = result
-        }
-        else if (expression[i] == 'x'){
+
+        } else if (expression[i] == 'x'){
             let nums=expression.split('x')
             num1=parseFloat(nums[0])
             if (isNegative == true){
@@ -195,4 +196,4 @@ function agregarNuevoDigito(digit){
     checkNumLenght()
     expression=expression+digit
     display.innerHTML= expression
-    } 
+} 
