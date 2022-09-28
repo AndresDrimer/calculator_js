@@ -22,6 +22,7 @@ let expression =[]
 let num1=[]
 let num2 =[]
 let result=parseFloat(0)
+let isNegative = false
 
 
 // listeners
@@ -53,27 +54,27 @@ document.onkeyup = e =>{
     }else if (e.key == "2" || e.key == "Num2"){
         agregarDigito(2);
     }else if (e.key == "3" || e.key == "Num3"){
-    agregarDigito(3);
+        agregarDigito(3);
     }else if (e.key == "4" || e.key == "Num4"){
-    agregarDigito(4);
+        agregarDigito(4);
     }else if (e.key == "5" || e.key == "Num5"){
-    agregarDigito(5);
+        agregarDigito(5);
     }else if (e.key == "6" || e.key == "Num6"){
-    agregarDigito(6);
+        agregarDigito(6);
     }else if (e.key == "7" || e.key == "Num7"){
-    agregarDigito(7);
+        agregarDigito(7);
     }else if (e.key == "8" || e.key == "Num8"){
-    agregarDigito(8);
+        agregarDigito(8);
     }else if (e.key == "9" || e.key == "Num9"){
-    agregarDigito(9);
+        agregarDigito(9);
     }else if (e.key == "+" || e.key == "Num+"){
-    agregarDigito("+");
+        agregarDigito("+");
     }else if (e.key == "-" || e.key == "Num-"){
-    agregarDigito("-");
+        agregarDigito("-");
     }else if (e.key == "*" || e.key == "Num*"){
-    agregarDigito("x");
+        agregarDigito("x");
     }else if (e.key == "/" || e.key == "Num/"){
-    agregarDigito("/");
+        agregarDigito("/");
     }else if (e.key == "." || e.key == "Num."){
         agregarDigito(".");
     }else if (e.key == "Enter" || e.key == "Numenter"){
@@ -101,6 +102,14 @@ function checkNumLenght(){
     }
 }
 
+function evalNegative(){
+    if (expression[0] == "-"){
+        expression = expression.slice(1)
+        isNegative = true
+        console.log(expression, isNegative)
+    }
+}
+
 function clearLastDigit(){
     expression=expression.slice(0,-1)
     display.innerHTML= expression 
@@ -112,10 +121,14 @@ function clearAllDigits(){
 }
 
 function calculus(){
+    evalNegative();
     for (i in expression) {
         if (expression[i] == '+'){
             let nums=expression.split('+')
             num1=parseFloat(nums[0])
+            if (isNegative == true){
+                num1=-num1
+            }
             num2=parseFloat(nums[1])
             result=num1+num2
             display.innerHTML= result
@@ -125,6 +138,9 @@ function calculus(){
         } else if (expression[i] == '-'){
             let nums=expression.split('-')
             num1=parseFloat(nums[0])
+            if (isNegative == true){
+                num1=-num1
+            }
             num2=parseFloat(nums[1])
             result=num1-num2
             display.innerHTML= result
@@ -133,6 +149,9 @@ function calculus(){
         else if (expression[i] == 'x'){
             let nums=expression.split('x')
             num1=parseFloat(nums[0])
+            if (isNegative == true){
+                num1=-num1
+            }
             num2=parseFloat(nums[1])
             result=num1*num2
             round3ClearZeros()   
@@ -142,6 +161,9 @@ function calculus(){
         } else if (expression[i] == '/'){
             let nums=expression.split('/')
             num1=parseFloat(nums[0])
+            if (isNegative == true){
+                num1=-num1
+            }
             num2=parseFloat(nums[1])
             
             if (num2=="0"){
